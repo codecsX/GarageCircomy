@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Circomy</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+</head>
+
+<style>
+  body {
+    background-color: #ecedee
+  }
+
+  .card {
+    border: none;
+    overflow: hidden
+  }
+
+  .thumbnail_images ul {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 10px
+  }
+
+  .thumbnail_images ul li {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    transition: all 0.5s
+  }
+
+  .thumbnail_images ul li:hover {
+    border: 2px solid #000
+  }
+
+  .main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    height: 400px;
+    width: 100%;
+    overflow: hidden
+  }
+
+  .heart {
+    height: 29px;
+    width: 29px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  .content p {
+    font-size: 12px
+  }
+
+  .ratings span {
+    font-size: 14px;
+    margin-left: 12px
+  }
+
+  .colors {
+    margin-top: 5px
+  }
+
+  .colors ul {
+    list-style: none;
+    display: flex;
+    padding-left: 0px
+  }
+
+  .colors ul li {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer
+  }
+
+  .colors ul li:nth-child(1) {
+    background-color: #6c704d
+  }
+
+  .colors ul li:nth-child(2) {
+    background-color: #96918b
+  }
+
+  .colors ul li:nth-child(3) {
+    background-color: #68778e
+  }
+
+  .colors ul li:nth-child(4) {
+    background-color: #263f55
+  }
+
+  .colors ul li:nth-child(5) {
+    background-color: black
+  }
+
+  .right-side {
+    position: relative
+  }
+
+  .search-option {
+    position: absolute;
+    background-color: #000;
+    overflow: hidden;
+    align-items: center;
+    color: #fff;
+    width: 200px;
+    height: 200px;
+    border-radius: 49% 51% 50% 50% / 68% 69% 31% 32%;
+    left: 30%;
+    bottom: -250px;
+    transition: all 0.5s;
+    cursor: pointer
+  }
+
+  .search-option .first-search {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    font-size: 20px;
+    opacity: 1000
+  }
+
+  .search-option .inputs {
+    opacity: 0;
+    transition: all 0.5s ease;
+    transition-delay: 0.5s;
+    position: relative
+  }
+
+  .search-option .inputs input {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    padding-left: 20px;
+    background-color: transparent;
+    width: 300px;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #eee;
+    transition: all 0.5s;
+    z-index: 10
+  }
+
+  .search-option .inputs input:focus {
+    box-shadow: none;
+    outline: none;
+    z-index: 10
+  }
+
+  .search-option:hover {
+    border-radius: 0px;
+    width: 100%;
+    left: 0px
+  }
+
+  .search-option:hover .inputs {
+    opacity: 1
+  }
+
+  .search-option:hover .first-search {
+    left: 27px;
+    top: 25px;
+    font-size: 15px
+  }
+
+  .search-option:hover .inputs input {
+    top: 20px
+  }
+
+  .search-option .share {
+    position: absolute;
+    right: 20px;
+    top: 22px
+  }
+
+  .buttons .btn {
+
+    height: 50px;
+    width: 150px;
+    border-radius: 0px !important
+  }
+
+  .quantity {
+    display: inline-block;
+  }
+
+  .quantity .input-text.qty {
+    width: 35px;
+    height: 39px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #efefef;
+  }
+
+  .quantity.buttons_added {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  .quantity.buttons_added input {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    box-shadow: none;
+  }
+
+  .quantity.buttons_added .minus,
+  .quantity.buttons_added .plus {
+    padding: 7px 10px 8px;
+    height: 41px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    cursor: pointer;
+  }
+
+  .quantity.buttons_added .minus {
+    border-right: 0;
+  }
+
+  .quantity.buttons_added .plus {
+    border-left: 0;
+  }
+
+  .quantity.buttons_added .minus:hover,
+  .quantity.buttons_added .plus:hover {
+    background: #eeeeee;
+  }
+
+  .quantity input::-webkit-outer-spin-button,
+  .quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+  }
+
+  .quantity.buttons_added .minus:focus,
+  .quantity.buttons_added .plus:focus {
+    outline: none;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+    <img style="max-width: 200px;" class="navbar-brand"src="/images/image.png" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
+
+        </ul>
+        <form class="d-flex">
+          <li class="nav-item"><img style="max-width: 32px; max-height: 32px; margin-top: 12px; margin-left: 10px;" src="/images/finland.png" /></li>
+
+        </form>
+      </div>
+    </div>
+  </nav>
+  <form class="" action="/buildingfirst" method="post">
+
+
+    <div class="container mt-5 mb-5">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-6 border-end">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="main_image"> <img src="/images/beam.jpg" id="main_product_image" width="550"> </div>
+              <div class="thumbnail_images">
+                <ul id="thumbnail">
+                  <li><img onclick="changeImage(this)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-s-YJaMUhYuJNgUyOrDdyYVou6zuzNwfYZ0R2nHu3njPuFJ99dXXfiB1j1rnfWlDWlS4&usqp=CAU" width="70"></li>
+                  <li><img onclick="changeImage(this)" src="https://images.squarespace-cdn.com/content/v1/5ce308835deffa0001e9c364/1608126179424-NR1YDZV4LCWDLNL4X9X2/shutterstock_1096517132.jpg?format=1000w" width="70"></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 right-side">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Building URN:circomy:3467894f-8596-4c3a-a978-8fcaba3903c5</h4> <span class="heart"><i class='bx bx-heart'></i></span>
+              </div>
+              <div class="mt-2 pr-3 content">
+                <p>Category: Beams</p>
+              </div>Current Bid
+              <h3>€430.99</h3>
+
+              <div class="ratings d-flex flex-row align-items-center">
+                <!-- <div class="d-flex justify-content-center small text-warning mb-2">
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                </div> -->
+                <!-- <div class="d-flex flex-row"> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i> </div> <span>441 reviews</span> -->
+              </div>
+              <div class="quantity buttons_added">
+                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+              </div>
+              <p class="mt-5"> <span class="fw-bold">Issued Date: <%= data %></span></p>
+              <p style="margin-top: -50px;" class="mt-5"> <span class="fw-bold">Issuer : <%= issuers %></span></p>
+              <p class="mt-5"> <span class="fw-bold">Expiration Date: <%= expiration %></span></p>
+              <p class="mt-5"> <span class="fw-bold">Location : <%= loc %> | Country : <%= locCountry %> | Region : <%= locRegion %></span></p>
+
+              <!-- <div class="colors">
+                <ul id="marker">
+                  <li id="marker-1"></li>
+                  <li id="marker-2"></li>
+                  <li id="marker-3"></li>
+                  <li id="marker-4"></li>
+                  <li id="marker-5"></li>
+                </ul>
+              </div> -->
+            </div>
+            <div class="buttons d-flex flex-row mt-5 gap-3"> <button type="submit" class="btn btn-outline-dark" href="/transportbooking">Buy Now</button> <button class="btn btn-dark">Add to Basket</button> </div>
+
+            <div class="search-option"> <i class='bx bx-search-alt-2 first-search'></i>
+              <div class="inputs"> <input type="text" name=""> </div> <i class='bx bx-share-alt share'></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+      function changeImage(element) {
+
+        var main_prodcut_image = document.getElementById('main_product_image');
+        main_prodcut_image.src = element.src;
+
+
+      }
+    </script>
+    <script type="text/javascript">
+      function wcqib_refresh_quantity_increments() {
+        jQuery("div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)").each(function(a, b) {
+          var c = jQuery(b);
+          c.addClass("buttons_added"), c.children().first().before('<input type="button" value="-" class="minus" />'), c.children().last().after('<input type="button" value="+" class="plus" />')
+        })
+      }
+      String.prototype.getDecimals || (String.prototype.getDecimals = function() {
+        var a = this,
+          b = ("" + a).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+        return b ? Math.max(0, (b[1] ? b[1].length : 0) - (b[2] ? +b[2] : 0)) : 0
+      }), jQuery(document).ready(function() {
+        wcqib_refresh_quantity_increments()
+      }), jQuery(document).on("updated_wc_div", function() {
+        wcqib_refresh_quantity_increments()
+      }), jQuery(document).on("click", ".plus, .minus", function() {
+        var a = jQuery(this).closest(".quantity").find(".qty"),
+          b = parseFloat(a.val()),
+          c = parseFloat(a.attr("max")),
+          d = parseFloat(a.attr("min")),
+          e = a.attr("step");
+        b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a
+          .val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
+      });
+    </script>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &Circomy</p>
+      </div>
+    </footer>
+  </form>
+</body>
+
+</html>

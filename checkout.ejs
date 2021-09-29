@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Circomy</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Core theme CSS (includes Bootstrap)-->
+</head>
+<style>
+  .bg {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-size: 100% 100%;
+    background-position: top center;
+    margin: auto
+}
+
+.mainRow {
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+p {
+    margin: 0px
+}
+
+.desc {
+    background-color: #f0edeb;
+    margin-top: 5%;
+    margin-left: 0;
+    margin-right: 50px;
+    margin-bottom: 4%
+}
+
+.card-body {
+    padding: 0;
+    margin: 0;
+    margin-top: 10%
+}
+
+div.card.main {
+    margin: 0px !important
+}
+
+.card {
+    padding: 0 !important;
+    margin-top: 40px
+}
+
+.quantity,
+.shipping,
+.promocode,
+.subtotal,
+.cardAndExpire,
+.nameAndcvc {
+    margin: 5%;
+    color: #6c757d !important
+}
+
+.heading1 {
+    margin: 5%;
+    font-size: 25px
+}
+
+.heading2 {
+    margin: 5%;
+    margin-top: 15%;
+    font-size: 20px
+}
+
+.payment {
+    background-color: #f0edeb;
+    padding: 3px;
+    margin-top: 15%
+}
+
+.text1 {
+    color: black;
+    font-weight: 700
+}
+
+.card-footer {
+    background-color: black;
+    color: white
+}
+
+.purchaseLink {
+    text-decoration: none
+}
+
+.row1 {
+    font-size: 12px
+}
+
+.row2 {
+    font-weight: 600
+}
+
+.subRow {
+    margin-left: 10%;
+    margin-bottom: 2%;
+    margin-top: 5%
+}
+
+p.cardAndExpireValue,
+p.nameAndcvcValue {
+    margin: 5%;
+    margin-bottom: 10%;
+    font-weight: 600
+}
+
+p.nameAndcvc,
+p.cardAndExpire {
+    margin-bottom: -10px
+}
+
+.total {
+    margin: 5%
+}
+
+.totalText {
+    font-weight: 700
+}
+
+.totalText2 {
+    font-weight: 700;
+    font-size: 30px
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 430px
+}
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container px-4 px-lg-5">
+        <img style="max-width: 200px;" class="navbar-brand"src="/images/image.png" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">About</a></li>
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Contact</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
+                  <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Search</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#!">Building Type</a></li>
+                          <li><hr class="dropdown-divider" /></li>
+                          <li><a class="dropdown-item" href="#!">Search By Id</a></li>
+                          <li><a class="dropdown-item" href="#!">Search By Category</a></li>
+                      </ul>
+                  </li> -->
+              </ul>
+              <!-- <form class="d-flex">
+                  <button class="btn btn-outline-dark" type="submit">
+                      <i class="bi-cart-fill me-1"></i>
+                      Cart
+                      <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                  </button>
+              </form> -->
+          </div>
+      </div>
+  </nav>
+
+<!--For Page-->
+<div class="bg">
+    <!--For Row containing all card-->
+    <div class="row mainRow">
+        <!--Card 1-->
+        <div class="col-sm-8">
+            <div class="card card-cascade wider shadow p-3 mb-5 ">
+                <!--Card image-->
+                <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="/images/beam.jpg" alt=""> <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a> </div>
+                <!--Product Description-->
+                <div class="desc">
+                    <!-- 1st Row for title-->
+                    <div class="row subRow">
+                        <!--Column for Data-->
+                        <div class="col">
+                            <p class="text-muted row1">Issued Date:</p>
+                            <p class="row2"> <%= data %></p>
+                        </div>
+                        <!--Column for Data-->
+                        <div class="col">
+                            <p class="text-muted row1">Issuer:</p>
+                            <p class="row2"> <%= issuers %></p>
+                        </div>
+                        <!--Column for Data-->
+                        <div class="col">
+                            <p class="text-muted row1">  Signature:</p>
+                            <p class="row2"> <%= sign %></p>
+                        </div>
+                    </div> <!-- 2nd Row for title-->
+                    <div class="row subRow">
+                        <!--Column for Data-->
+                        <div class="col">
+                            <p class="text-muted row1">credential:</p>
+                            <p class="row2">   <%= credential %></p>
+                        </div>
+                        <!--Column for Data-->
+                        <div class="col">
+                            <p class="text-muted row1">Owner Hash:</p>
+                            <p class="row2">   <%= tokenprev %></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Card 2-->
+        <div class="col-sm-4">
+            <div class="card card-cascade card-ecommerce wider shadow p-3 mb-5 ">
+                <!--Card Body-->
+                <div class="card-body card-body-cascade">
+                    <!--Card Description-->
+                    <div class="card2decs">
+                        <p class="heading1">Product Hash:<strong> <%= tokens %></strong></p>
+                        <p class="quantity">Qty : <span class="float-right text1">1</span></p>
+                        <p class="subtotal">Subtotal : <span class="float-right text1">€430.99</span></p>
+                        <p class="shipping">Transportation Mode : <span class="float-right text1"><%= shipping %></span></p>
+                    </div>
+                    <div class="payment">
+                        <p class="heading2"><strong>Payment Details</strong></p>
+                        <p class="cardAndExpire">Card Number<span class="float-right">Expiry</span></p>
+                        <p class="cardAndExpireValue">161617161816188<span class="float-right">26/11</span></p>
+                        <p class="nameAndcvc" style="margin-bottom:-10px;">Cardholder name<span class="float-right">CVC</span></p>
+                        <p class="nameAndcvcValue">Circular Environment Builders<span class="float-right">010</span></p>
+                    </div>
+                    <!--Card footer--> <a href="" class="purchaseLink">
+                        <div class="card-footer text-center"> ORDER &#8594; </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &Circomy</p></div>
+</footer>
+</body>
+</html>
